@@ -1,8 +1,12 @@
 {
     "name": "system",
     "version": "0.0.1",
+    "preferGlobal": true,
     "description": "system management - cli",
     "main": "index.js",
+    "bin": {
+        "sys": "./bin/index.js"
+    },
     "directories": {
         "doc": "doc"
     },
