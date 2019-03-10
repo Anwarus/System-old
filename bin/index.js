@@ -45,3 +45,5 @@ program
     .action(function action(object) {
         dispatcher.parse(object, actions.list);
     });
+
+program.parse(process.argv);
