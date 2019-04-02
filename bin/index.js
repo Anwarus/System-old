@@ -33,10 +33,10 @@ program
     });
 
 program
-    .command(`${actions.show} <object>`)
+    .command(`${actions.show} <object> <id>`)
     .description('Show new object to list')
-    .action(function action(object) {
-        dispatcher.parse(object, actions.show);
+    .action(function action(object, id) {
+        dispatcher.parse(object, actions.show, id);
     });
 
 program
