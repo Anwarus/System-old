@@ -46,4 +46,12 @@ program
         dispatcher.parse(object, actions.list);
     });
 
+// Goal extensions
+program
+    .command('finish goal <id>')
+    .description('Finish given goal')
+    .action(function action(object, id) {
+        dispatcher.parse('goal', 'finish', id);
+    });
+
 program.parse(process.argv);
