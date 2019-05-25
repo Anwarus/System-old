@@ -36,7 +36,7 @@ program
     .command(`${actions.show} <object> <id>`)
     .description('Show new object to list')
     .action(function action(object, id) {
-        dispatcher.parse(object, actions.show, id);
+        dispatcher.parse(object, actions.show, { id });
     });
 
 program
@@ -51,7 +51,16 @@ program
     .command('finish goal <id>')
     .description('Finish given goal')
     .action(function action(object, id) {
-        dispatcher.parse('goal', 'finish', id);
+        dispatcher.parse('goal', 'finish', { id });
+    });
+
+// Marks extensions
+program
+    .command('summarize mark')
+    .description('Prints summary of latest marks')
+    .option('-r, --range <range>', 'How many range to summarize')
+    .action(function action(options) {
+        dispatcher.parse('mark', 'summarize', options);
     });
 
 program.parse(process.argv);
